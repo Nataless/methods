@@ -11,5 +11,12 @@
     },
     "rules": {
       "no-new": 0
-    }
+    },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+    }  
   }
