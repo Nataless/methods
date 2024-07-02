@@ -54,7 +54,7 @@ test.each([
   [
     new Zombie('Tanya'),
     {
-      name: 'Nanya',
+      name: 'Tanya',
       type: 'Zombie',
       health: 100,
       level: 1,
