@@ -8,9 +8,9 @@ import Character from '../classes/Character';
 
 test.each([
   [
-    new Bowman('Vasya'),
+    new Bowman('Kate'),
     {
-      name: 'Vasya',
+      name: 'Kate',
       type: 'Bowman',
       health: 100,
       level: 1,
@@ -19,9 +19,9 @@ test.each([
     },
   ],
   [
-    new Swordsman('Sveta'),
+    new Swordsman('Mark'),
     {
-      name: 'Sveta',
+      name: 'Mark',
       type: 'Swordsman',
       health: 100,
       level: 1,
@@ -30,9 +30,9 @@ test.each([
     },
   ],
   [
-    new Magician('Petya'),
+    new Magician('Natalie'),
     {
-      name: 'Petya',
+      name: 'Natalie',
       type: 'Magician',
       health: 100,
       level: 1,
@@ -41,9 +41,9 @@ test.each([
     },
   ],
   [
-    new Undead('Vova'),
+    new Undead('John'),
     {
-      name: 'Vova',
+      name: 'John',
       type: 'Undead',
       health: 100,
       level: 1,
@@ -52,9 +52,9 @@ test.each([
     },
   ],
   [
-    new Zombie('Katya'),
+    new Zombie('Tanya'),
     {
-      name: 'Katya',
+      name: 'Nanya',
       type: 'Zombie',
       health: 100,
       level: 1,
@@ -63,9 +63,9 @@ test.each([
     },
   ],
   [
-    new Daemon('Joker'),
+    new Daemon('Bred'),
     {
-      name: 'Joker',
+      name: 'Bred',
       type: 'Daemon',
       health: 100,
       level: 1,
@@ -79,28 +79,28 @@ test.each([
 
 test('error short name', () => {
   expect(() => {
-    new Bowman('T');
+    new Bowman('M');
   }).toThrow();
 });
 
 test('error long name', () => {
   expect(() => {
-    new Bowman('Testtesttest');
+    new Bowman('Maaaaaaaarryyyy');
   }).toThrow();
 });
 
 test('error other type', () => {
   expect(() => {
-    new Character('Tolya', 'Admin');
+    new Character('Vick', 'Admin');
   }).toThrow();
 });
 
 test('levelUp success', () => {
-  const vasya = new Bowman('Vasya');
-  vasya.health = 50;
-  vasya.levelUp();
-  expect(vasya).toEqual({
-    name: 'Vasya',
+  const tommy = new Bowman('Tommy');
+  tommy.health = 50;
+  tommy.levelUp();
+  expect(tommy).toEqual({
+    name: 'Tommy',
     type: 'Bowman',
     health: 100,
     level: 2,
@@ -110,23 +110,23 @@ test('levelUp success', () => {
 });
 
 test('levelUp death', () => {
-  const vasya = new Bowman('Vasya');
-  vasya.health = 0;
+  const elly = new Bowman('Elly');
+  elly.health = 0;
   expect(() => {
-    vasya.levelUp();
+    elly.levelUp();
   }).toThrow();
 });
 
 test('damage 20 points', () => {
-  const vasya = new Bowman('Vasya');
-  vasya.damage(20);
-  expect(vasya.health).toBe(85);
+  const sam = new Bowman('Sam');
+  sam.damage(20);
+  expect(sam.health).toBe(85);
 });
 
 test('damage death', () => {
-  const vasya = new Bowman('Vasya');
-  vasya.damage(200);
+  const iren = new Bowman('Iren');
+  iren.damage(200);
   expect(() => {
-    vasya.damage(200);
+    iren.damage(200);
   }).toThrow();
 });
