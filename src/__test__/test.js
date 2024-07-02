@@ -1,5 +1,5 @@
 import Bowman from '../classes/Bowman';
-import Swordsman from './classes/Swordsman';
+import Swordsman from '../classes/Swordsman';
 import Magician from '../classes/Magician';
 import Undead from '../classes/Undead';
 import Zombie from '../classes/Zombie';
